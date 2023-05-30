@@ -88,3 +88,15 @@ receipt
 //     .finally(() => {console.log('done!')})
 //
 
+function* gen() {
+    console.log(1)
+    yield 1
+    console.log(2)
+    yield 2
+    console.log(3)
+
+}
+const g = gen();
+console.log(g.next())
+console.log(g.next())
+console.log(g.next())
