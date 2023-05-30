@@ -51,7 +51,7 @@ receipt
 //     .then(() => move('500px', '0px'))
 //     .then(() => move('0px', '0px'));
 
- const url = 'https://api.nbp.pl/api/exchangerates/rates/a/chf/?format=json';
+// const url = 'https://api.nbp.pl/api/exchangerates/rates/a/chf/?format=json';
 // const request = fetch (url);
 //
 //
@@ -132,3 +132,23 @@ receipt
 // g.next()
 //     .value
 //     .then((response) => g.next(response))
+
+function move(top, left) {
+ return new Promise((resolve) => {
+  setTimeout(() => {
+   boxRef.style.left = left;
+   boxRef.style.top = top;
+   resolve();
+  }, 3000);
+ });
+}
+
+async function animate() {
+ await move('0px', '500px');
+ await move('500px', '500px');
+ await move('500px', '0px');
+ await move('0', '0');
+ console.log('Animation finished!');
+}
+
+animate().catch(() => {});
