@@ -51,7 +51,7 @@ receipt
 //     .then(() => move('500px', '0px'))
 //     .then(() => move('0px', '0px'));
 
- // const url = 'https://api.nbp.pl/api/exchangerates/rates/a/chf/?format=json';
+ const url = 'https://api.nbp.pl/api/exchangerates/rates/a/chf/?format=json';
 // const request = fetch (url);
 //
 //
@@ -88,15 +88,47 @@ receipt
 //     .finally(() => {console.log('done!')})
 //
 
-function* gen() {
-    console.log(1)
-    yield 1
-    console.log(2)
-    yield 2
-    console.log(3)
+// function* gen() {
+//     console.log(1)
+//     yield 1
+//     console.log(2)
+//     yield 2
+//     console.log(3)
+//
+// }
+// const g = gen();
+// console.log(g.next())
+// console.log(g.next())
+// console.log(g.next())
 
-}
-const g = gen();
-console.log(g.next())
-console.log(g.next())
-console.log(g.next())
+// function* infiniteID() {
+//     let counter = 1;
+//
+//     while(true) {
+//         yield counter
+//         counter++;
+//     }
+// }
+//
+// const g = infiniteID()
+// console.log(g.next())
+
+// function* g() {
+//     let a = 10;
+//     let b = yield a + 20;
+//     yield b;
+// }
+//
+// const g1 = g();
+// console.log(g1.next())
+// console.log(g1.next(50))
+// console.log(g1.next())
+
+// function* getData(url) {
+//     const data = yield fetch(url);
+//     console.log(data);
+// }
+// const g = getData(url)
+// g.next()
+//     .value
+//     .then((response) => g.next(response))
